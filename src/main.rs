@@ -1,10 +1,14 @@
 mod exam1;
+mod exam2;
 
 async fn main_task() {
     exam1::test1().await;
     exam1::test2().await;
     exam1::test3().await;
     exam1::test4().await;
+
+    exam2::test1();
+    exam2::test2();
 }
 
 fn main() {

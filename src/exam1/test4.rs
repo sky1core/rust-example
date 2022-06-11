@@ -39,7 +39,7 @@ fn fn_non_async2() {
             fn_async2().await;
         });
 
-        let timeout = tokio::time::sleep(Duration::from_secs(10));
+        let timeout = tokio::time::sleep(Duration::from_secs(5));
 
         tokio::select! {
             _ = task => {
