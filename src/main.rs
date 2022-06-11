@@ -8,7 +8,7 @@ async fn main_task() {
     exam1::test4().await;
 
     exam2::test1();
-    exam2::test2();
+    exam2::test2().await;
 }
 
 fn main() {
