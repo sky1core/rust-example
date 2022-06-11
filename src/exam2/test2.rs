@@ -16,11 +16,13 @@ pub async fn test2() {
     executor(f2, "f2").await;
 }
 
-type FType = Box<dyn FnOnce(&str) -> String>;
+type FType = Box<dyn Fn(&str) -> String>;
 
 async fn executor(f: FType, data: &str) {
-    let r = f(data);
-    log::info!("executor {}", r);
+    for n in 1..5 {
+        let r = f(data);
+        log::info!("executor {}", r);
+    }
 }
 
 fn fn_normal(data: &str) -> String {
