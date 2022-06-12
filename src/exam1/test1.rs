@@ -22,9 +22,8 @@ fn fn_non_async() {
 
     // block_on use current thread
     let handle = Handle::current();
-    handle.enter();
 
-    let results = block_on(async move {
+    let results = handle.block_on(async move {
         join_all([
             fn_async(true),
             fn_async(false),

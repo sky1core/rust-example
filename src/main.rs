@@ -2,9 +2,7 @@ mod exam1;
 mod exam2;
 
 async fn main_task() {
-    tokio::spawn(async move {
-        exam1::test1().await
-    }).await;
+    exam1::test1().await;
     exam1::test2().await;
     exam1::test3().await;
     exam1::test4().await;
